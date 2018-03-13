@@ -1,0 +1,1056 @@
+%
+
+%% bare_jrnl.tex
+%% V1.4b
+%% 2015/08/26
+%% by Michael Shell
+%% see http://www.michaelshell.org/
+%% for current contact information.
+%%
+%% This is a skeleton file demonstrating the use of IEEEtran.cls
+%% (requires IEEEtran.cls version 1.8b or later) with an IEEE
+%% journal paper.
+%%
+%% Support sites:
+%% http://www.michaelshell.org/tex/ieeetran/
+%% http://www.ctan.org/pkg/ieeetran
+%% and
+%% http://www.ieee.org/
+
+%%*************************************************************************
+%% Legal Notice:
+%% This code is offered as-is without any warranty either expressed or
+%% implied; without even the implied warranty of MERCHANTABILITY or
+%% FITNESS FOR A PARTICULAR PURPOSE! 
+%% User assumes all risk.
+%% In no event shall the IEEE or any contributor to this code be liable for
+%% any damages or losses, including, but not limited to, incidental,
+%% consequential, or any other damages, resulting from the use or misuse
+%% of any information contained here.
+%%
+%% All comments are the opinions of their respective authors and are not
+%% necessarily endorsed by the IEEE.
+%%
+%% This work is distributed under the LaTeX Project Public License (LPPL)
+%% ( http://www.latex-project.org/ ) version 1.3, and may be freely used,
+%% distributed and modified. A copy of the LPPL, version 1.3, is included
+%% in the base LaTeX documentation of all distributions of LaTeX released
+%% 2003/12/01 or later.
+%% Retain all contribution notices and credits.
+%% ** Modified files should be clearly indicated as such, including  **
+%% ** renaming them and changing author support contact information. **
+%%*************************************************************************
+
+
+% *** Authors should verify (and, if needed, correct) their LaTeX system  ***
+% *** with the testflow diagnostic prior to trusting their LaTeX platform ***
+% *** with production work. The IEEE's font choices and paper sizes can   ***
+% *** trigger bugs that do not appear when using other class files.       ***                          ***
+% The testflow support page is at:
+% http://www.michaelshell.org/tex/testflow/
+
+
+
+\documentclass[journal]{IEEEtran}
+%
+% If IEEEtran.cls has not been installed into the LaTeX system files,
+% manually specify the path to it like:
+% \documentclass[journal]{../sty/IEEEtran}
+
+
+
+
+
+% Some very useful LaTeX packages include:
+% (uncomment the ones you want to load)
+
+
+% *** MISC UTILITY PACKAGES ***
+%
+%\usepackage{ifpdf}
+% Heiko Oberdiek's ifpdf.sty is very useful if you need conditional
+% compilation based on whether the output is pdf or dvi.
+% usage:
+% \ifpdf
+%   % pdf code
+% \else
+%   % dvi code
+% \fi
+% The latest version of ifpdf.sty can be obtained from:
+% http://www.ctan.org/pkg/ifpdf
+% Also, note that IEEEtran.cls V1.7 and later provides a builtin
+% \ifCLASSINFOpdf conditional that works the same way.
+% When switching from latex to pdflatex and vice-versa, the compiler may
+% have to be run twice to clear warning/error messages.
+
+
+
+
+
+
+% *** CITATION PACKAGES ***
+%
+\usepackage{cite}
+% cite.sty was written by Donald Arseneau
+% V1.6 and later of IEEEtran pre-defines the format of the cite.sty package
+% \cite{} output to follow that of the IEEE. Loading the cite package will
+% result in citation numbers being automatically sorted and properly
+% "compressed/ranged". e.g., [1], [9], [2], [7], [5], [6] without using
+% cite.sty will become [1], [2], [5]--[7], [9] using cite.sty. cite.sty's
+% \cite will automatically add leading space, if needed. Use cite.sty's
+% noadjust option (cite.sty V3.8 and later) if you want to turn this off
+% such as if a citation ever needs to be enclosed in parenthesis.
+% cite.sty is already installed on most LaTeX systems. Be sure and use
+% version 5.0 (2009-03-20) and later if using hyperref.sty.
+% The latest version can be obtained at:
+% http://www.ctan.org/pkg/cite
+% The documentation is contained in the cite.sty file itself.
+
+
+
+
+
+
+% *** GRAPHICS RELATED PACKAGES ***
+%
+\ifCLASSINFOpdf
+  \usepackage[pdftex]{graphicx}
+  % declare the path(s) where your graphic files are
+  % \graphicspath{{../pdf/}{../jpeg/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  % \DeclareGraphicsExtensions{.pdf,.jpeg,.png}
+\else
+  % or other class option (dvipsone, dvipdf, if not using dvips). graphicx
+  % will default to the driver specified in the system graphics.cfg if no
+  % driver is specified.
+  \usepackage[dvips]{graphicx}
+  % declare the path(s) where your graphic files are
+  % \graphicspath{{../eps/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  % \DeclareGraphicsExtensions{.eps}
+\fi
+% graphicx was written by David Carlisle and Sebastian Rahtz. It is
+% required if you want graphics, photos, etc. graphicx.sty is already
+% installed on most LaTeX systems. The latest version and documentation
+% can be obtained at: 
+% http://www.ctan.org/pkg/graphicx
+% Another good source of documentation is "Using Imported Graphics in
+% LaTeX2e" by Keith Reckdahl which can be found at:
+% http://www.ctan.org/pkg/epslatex
+%
+% latex, and pdflatex in dvi mode, support graphics in encapsulated
+% postscript (.eps) format. pdflatex in pdf mode supports graphics
+% in .pdf, .jpeg, .png and .mps (metapost) formats. Users should ensure
+% that all non-photo figures use a vector format (.eps, .pdf, .mps) and
+% not a bitmapped formats (.jpeg, .png). The IEEE frowns on bitmapped formats
+% which can result in "jaggedy"/blurry rendering of lines and letters as
+% well as large increases in file sizes.
+%
+% You can find documentation about the pdfTeX application at:
+% http://www.tug.org/applications/pdftex
+
+
+
+
+
+% *** MATH PACKAGES ***
+%
+\usepackage{amsmath}
+% A popular package from the American Mathematical Society that provides
+% many useful and powerful commands for dealing with mathematics.
+%
+% Note that the amsmath package sets \interdisplaylinepenalty to 10000
+% thus preventing page breaks from occurring within multiline equations. Use:
+\interdisplaylinepenalty=2500
+% after loading amsmath to restore such page breaks as IEEEtran.cls normally
+% does. amsmath.sty is already installed on most LaTeX systems. The latest
+% version and documentation can be obtained at:
+% http://www.ctan.org/pkg/amsmath
+
+
+
+
+
+% *** SPECIALIZED LIST PACKAGES ***
+%
+%\usepackage{algorithmic}
+% algorithmic.sty was written by Peter Williams and Rogerio Brito.
+% This package provides an algorithmic environment fo describing algorithms.
+% You can use the algorithmic environment in-text or within a figure
+% environment to provide for a floating algorithm. Do NOT use the algorithm
+% floating environment provided by algorithm.sty (by the same authors) or
+% algorithm2e.sty (by Christophe Fiorio) as the IEEE does not use dedicated
+% algorithm float types and packages that provide these will not provide
+% correct IEEE style captions. The latest version and documentation of
+% algorithmic.sty can be obtained at:
+% http://www.ctan.org/pkg/algorithms
+% Also of interest may be the (relatively newer and more customizable)
+% algorithmicx.sty package by Szasz Janos:
+% http://www.ctan.org/pkg/algorithmicx
+
+
+
+
+% *** ALIGNMENT PACKAGES ***
+%
+%\usepackage{array}
+% Frank Mittelbach's and David Carlisle's array.sty patches and improves
+% the standard LaTeX2e array and tabular environments to provide better
+% appearance and additional user controls. As the default LaTeX2e table
+% generation code is lacking to the point of almost being broken with
+% respect to the quality of the end results, all users are strongly
+% advised to use an enhanced (at the very least that provided by array.sty)
+% set of table tools. array.sty is already installed on most systems. The
+% latest version and documentation can be obtained at:
+% http://www.ctan.org/pkg/array
+
+
+% IEEEtran contains the IEEEeqnarray family of commands that can be used to
+% generate multiline equations as well as matrices, tables, etc., of high
+% quality.
+
+
+
+
+% *** SUBFIGURE PACKAGES ***
+\ifCLASSOPTIONcompsoc
+  \usepackage[caption=false,font=normalsize,labelfont=sf,textfont=sf]{subfig}
+\else
+  \usepackage[caption=false,font=footnotesize]{subfig}
+\fi
+% subfig.sty, written by Steven Douglas Cochran, is the modern replacement
+% for subfigure.sty, the latter of which is no longer maintained and is
+% incompatible with some LaTeX packages including fixltx2e. However,
+% subfig.sty requires and automatically loads Axel Sommerfeldt's caption.sty
+% which will override IEEEtran.cls' handling of captions and this will result
+% in non-IEEE style figure/table captions. To prevent this problem, be sure
+% and invoke subfig.sty's "caption=false" package option (available since
+% subfig.sty version 1.3, 2005/06/28) as this is will preserve IEEEtran.cls
+% handling of captions.
+% Note that the Computer Society format requires a larger sans serif font
+% than the serif footnote size font used in traditional IEEE formatting
+% and thus the need to invoke different subfig.sty package options depending
+% on whether compsoc mode has been enabled.
+%
+% The latest version and documentation of subfig.sty can be obtained at:
+% http://www.ctan.org/pkg/subfig
+
+
+
+
+% *** FLOAT PACKAGES ***
+%
+%\usepackage{fixltx2e}
+% fixltx2e, the successor to the earlier fix2col.sty, was written by
+% Frank Mittelbach and David Carlisle. This package corrects a few problems
+% in the LaTeX2e kernel, the most notable of which is that in current
+% LaTeX2e releases, the ordering of single and double column floats is not
+% guaranteed to be preserved. Thus, an unpatched LaTeX2e can allow a
+% single column figure to be placed prior to an earlier double column
+% figure.
+% Be aware that LaTeX2e kernels dated 2015 and later have fixltx2e.sty's
+% corrections already built into the system in which case a warning will
+% be issued if an attempt is made to load fixltx2e.sty as it is no longer
+% needed.
+% The latest version and documentation can be found at:
+% http://www.ctan.org/pkg/fixltx2e
+
+
+%\usepackage{stfloats}
+% stfloats.sty was written by Sigitas Tolusis. This package gives LaTeX2e
+% the ability to do double column floats at the bottom of the page as well
+% as the top. (e.g., "\begin{figure*}[!b]" is not normally possible in
+% LaTeX2e). It also provides a command:
+%\fnbelowfloat
+% to enable the placement of footnotes below bottom floats (the standard
+% LaTeX2e kernel puts them above bottom floats). This is an invasive package
+% which rewrites many portions of the LaTeX2e float routines. It may not work
+% with other packages that modify the LaTeX2e float routines. The latest
+% version and documentation can be obtained at:
+% http://www.ctan.org/pkg/stfloats
+% Do not use the stfloats baselinefloat ability as the IEEE does not allow
+% \baselineskip to stretch. Authors submitting work to the IEEE should note
+% that the IEEE rarely uses double column equations and that authors should try
+% to avoid such use. Do not be tempted to use the cuted.sty or midfloat.sty
+% packages (also by Sigitas Tolusis) as the IEEE does not format its papers in
+% such ways.
+% Do not attempt to use stfloats with fixltx2e as they are incompatible.
+% Instead, use Morten Hogholm'a dblfloatfix which combines the features
+% of both fixltx2e and stfloats:
+%
+% \usepackage{dblfloatfix}
+% The latest version can be found at:
+% http://www.ctan.org/pkg/dblfloatfix
+
+
+
+
+%\ifCLASSOPTIONcaptionsoff
+%  \usepackage[nomarkers]{endfloat}
+% \let\MYoriglatexcaption\caption
+% \renewcommand{\caption}[2][\relax]{\MYoriglatexcaption[#2]{#2}}
+%\fi
+% endfloat.sty was written by James Darrell McCauley, Jeff Goldberg and 
+% Axel Sommerfeldt. This package may be useful when used in conjunction with 
+% IEEEtran.cls'  captionsoff option. Some IEEE journals/societies require that
+% submissions have lists of figures/tables at the end of the paper and that
+% figures/tables without any captions are placed on a page by themselves at
+% the end of the document. If needed, the draftcls IEEEtran class option or
+% \CLASSINPUTbaselinestretch interface can be used to increase the line
+% spacing as well. Be sure and use the nomarkers option of endfloat to
+% prevent endfloat from "marking" where the figures would have been placed
+% in the text. The two hack lines of code above are a slight modification of
+% that suggested by in the endfloat docs (section 8.4.1) to ensure that
+% the full captions always appear in the list of figures/tables - even if
+% the user used the short optional argument of \caption[]{}.
+% IEEE papers do not typically make use of \caption[]'s optional argument,
+% so this should not be an issue. A similar trick can be used to disable
+% captions of packages such as subfig.sty that lack options to turn off
+% the subcaptions:
+% For subfig.sty:
+% \let\MYorigsubfloat\subfloat
+% \renewcommand{\subfloat}[2][\relax]{\MYorigsubfloat[]{#2}}
+% However, the above trick will not work if both optional arguments of
+% the \subfloat command are used. Furthermore, there needs to be a
+% description of each subfigure *somewhere* and endfloat does not add
+% subfigure captions to its list of figures. Thus, the best approach is to
+% avoid the use of subfigure captions (many IEEE journals avoid them anyway)
+% and instead reference/explain all the subfigures within the main caption.
+% The latest version of endfloat.sty and its documentation can obtained at:
+% http://www.ctan.org/pkg/endfloat
+%
+% The IEEEtran \ifCLASSOPTIONcaptionsoff conditional can also be used
+% later in the document, say, to conditionally put the References on a 
+% page by themselves.
+
+
+
+
+% *** PDF, URL AND HYPERLINK PACKAGES ***
+%
+%\usepackage{url}
+% url.sty was written by Donald Arseneau. It provides better support for
+% handling and breaking URLs. url.sty is already installed on most LaTeX
+% systems. The latest version and documentation can be obtained at:
+% http://www.ctan.org/pkg/url
+% Basically, \url{my_url_here}.
+
+
+
+
+% *** Do not adjust lengths that control margins, column widths, etc. ***
+% *** Do not use packages that alter fonts (such as pslatex).         ***
+% There should be no need to do such things with IEEEtran.cls V1.6 and later.
+% (Unless specifically asked to do so by the journal or conference you plan
+% to submit to, of course. )
+
+
+% correct bad hyphenation here
+\hyphenation{op-tical net-works semi-conduc-tor}
+
+%\newcommand{\revision}[1]{\textbf{#1}}
+\newcommand{\revision}[1]{{#1}}
+
+\begin{document}
+
+%\bstctlcite{IEEEexample:BSTcontrol}
+
+%
+% paper title
+% Titles are generally capitalized except for words such as a, an, and, as,
+% at, but, by, for, in, nor, of, on, or, the, to and up, which are usually
+% not capitalized unless they are the first or last word of the title.
+% Linebreaks \\ can be used within to get better formatting as desired.
+% Do not put math or special symbols in the title.
+\title{Transient Simulation of Semiconductor Devices Using a Deterministic Boltzmann Equation Solver}
+%
+%
+% author names and IEEE memberships
+% note positions of commas and nonbreaking spaces ( ~ ) LaTeX will not break
+% a structure at a ~ so this keeps an author's name from being broken across
+% two lines.
+% use \thanks{} to gain access to the first footnote area
+% a separate \thanks must be used for each paragraph as LaTeX2e's \thanks
+% was not built to handle multiple paragraphs
+%
+
+\author{Sung-Min~Hong,~\IEEEmembership{Member,~IEEE} and Jae-Hyung Jang,~\IEEEmembership{Member,~IEEE}%
+\thanks{This work was supported by the Samsung Research Funding Center of Samsung Electronics under Grant SRFC-IT1401-09.}
+\thanks{S.-M. Hong and J.-H. Jang are with the School of Electrical Engineering and Computer Science, Gwangju Institute of Science and Technology (GIST), Gwangju 61005, Korea.
+e-mail: smhong@gist.ac.kr}}
+
+% note the % following the last \IEEEmembership and also \thanks - 
+% these prevent an unwanted space from occurring between the last author name
+% and the end of the author line. i.e., if you had this:
+% 
+% \author{....lastname \thanks{...} \thanks{...} }
+%                     ^------------^------------^----Do not want these spaces!
+%
+% a space would be appended to the last name and could cause every name on that
+% line to be shifted left slightly. This is one of those "LaTeX things". For
+% instance, "\textbf{A} \textbf{B}" will typeset as "A B" not "AB". To get
+% "AB" then you have to do: "\textbf{A}\textbf{B}"
+% \thanks is no different in this regard, so shield the last } of each \thanks
+% that ends a line with a % and do not let a space in before the next \thanks.
+% Spaces after \IEEEmembership other than the last one are OK (and needed) as
+% you are supposed to have spaces between the names. For what it is worth,
+% this is a minor point as most people would not even notice if the said evil
+% space somehow managed to creep in.
+
+
+
+% The paper headers
+\markboth{Submitted to IEEE Journal of the Electron Devices Society}{}
+%\markboth{Journal of \LaTeX\ Class Files,~Vol.~14, No.~8, August~2015}%
+%{Shell \MakeLowercase{\textit{et al.}}: Bare Demo of IEEEtran.cls for IEEE %Journals}
+% The only time the second header will appear is for the odd numbered pages
+% after the title page when using the twoside option.
+% 
+% *** Note that you probably will NOT want to include the author's ***
+% *** name in the headers of peer review papers.                   ***
+% You can use \ifCLASSOPTIONpeerreview for conditional compilation here if
+% you desire.
+
+
+
+
+% If you want to put a publisher's ID mark on the page you can do it like
+% this:
+%\IEEEpubid{0000--0000/00\$00.00~\copyright~2015 IEEE}
+% Remember, if you use this you must call \IEEEpubidadjcol in the second
+% column for its text to clear the IEEEpubid mark.
+
+
+
+% use for special paper notices
+%\IEEEspecialpapernotice{(Invited Paper)}
+
+
+
+
+% make the title area
+\maketitle
+
+% As a general rule, do not put math, special symbols or citations
+% in the abstract or keywords.
+\begin{abstract}
+   In this paper, the transient simulation of semiconductor devices using a deterministic Boltzmann equation solver is presented.
+   Transient simulation capability is implemented in a deterministic Boltzmann equation solver for the three-dimensional momentum space based on the spherical harmonics expansion.    
+   The numerical simulation results with implicit time marching methods demonstrate that the transient simulation using a deterministic Boltzmann equation solver can be performed. 
+   The impact of the quasi-static approximation for the current density, which is widely adopted in the momentum-based equations, is tested for various devices such as homogeneous samples, an N$^+$NN$^+$ structure, and a MOSFET.
+\end{abstract}
+
+% Note that keywords are not normally used for peerreview papers.
+\begin{IEEEkeywords}
+Semiconductor device modeling, transient simulation, Boltzmann transport equation, deterministic Boltzmann equation solver, spherical harmonics expansion.
+\end{IEEEkeywords}
+
+
+
+
+
+
+% For peer review papers, you can put extra information on the cover
+% page as needed:
+% \ifCLASSOPTIONpeerreview
+% \begin{center} \bfseries EDICS Category: 3-BBND \end{center}
+% \fi
+%
+% For peerreview papers, this IEEEtran command inserts a page break and
+% creates the second title. It will be ignored for other modes.
+\IEEEpeerreviewmaketitle
+
+%///////////////
+%// Section I //
+%///////////////
+
+\section{Introduction}
+
+   \IEEEPARstart{D}{eterministic} Bolzmann equation solvers 
+\cite{Gnudi1993,Hennacy1995,Jungemann2006,Jin2008,Hong2009,Hong2011,Ruic2015}, which solve the semiclassical Boltzmann transport equation for carrier transport in a deterministic manner without relying on the Monte Carlo method,
+recently have gained popularity in the modeling and simulation society.
+   Among various variations of these solvers, for three-dimensional electron gases, the spherical harmonics expansion method is frequently used. 
+
+   Starting from the steady-state simulation using the Gummel iteration method \cite{Gnudi1993}, the full Newton-Raphson method has been introduced \cite{Hong2009, Ruic2015}.
+   Introduction of the full Newton-Raphson method enables 
+small-signal and noise analyses \cite{Hong2009, Ruic2015}.
+   An electrothermal simulation \cite{Kamrani2017} can be easily performed, since all variables are always evaluated.
+   It can be used as a valuable tool to simulate the hot-carrier-related problems such as the oxide reliability \cite{Bina2014,Kamrani2017a}.  
+   It is expected that deterministic Boltzmann equation solvers will play an increasingly important role in the semiconductor device simulation. 
+           
+\revision{In spite of the recent progress introduced above, 
+a fundamental simulation capability -- transient simulation with an implicit time marching scheme -- is still lacking \cite{Rupp2016}.
+   It is in contrast to the Monte Carlo method.
+   The Monte Carlo method is inherently transient, therefore, transient responses of the simulated system can be easily obtained. 
+   For example, the transient simulation via full-band Monte Carlo simulations for bipolar transistors, inverters, and ring oscillators can be found in \cite{Tiwari1990,Laux1997}.
+   However, in the deterministic Boltzmann equation solvers, 
+additional effort for the transient simulation is required, because the time derivative term should be separately implemented.}
+    
+   Although some reports on transient simulation results can be found in the literature \cite{Koseki2016,Di2016}, those works adopt the explicit time marching scheme, which is very different from the implicit time marching scheme used in the conventional device simulators.
+   Since the maximum time step for the explicit time marching technique is restricted due to the stability issue, it can be applied only to the very short time duration. 
+   Therefore, transient simulation capability using an implicit time marching technique is desirable for practical purposes.
+
+   One application area of particular interest is the simulation of plasma modes in the gated electron gas \cite{Dyakonov1993}.
+   Recently, the plasma instability has been simulated by solving the balance equations numerically \cite{Hong2015}.
+   In \cite{Kargar2016}, it is reported that the higher-order transport model (for example, the Boltzmann transport equation) is more desirable.
+   Therefore, it is very interesting to check whether the plasma effects can be obtained by solving the Boltzmann transport equation directly.
+
+   In this work, transient simulation results using the deterministic Boltzmann equation solver are reported.
+   The transient Boltzmann equation solver is applied to the simulation of the plasma effects.
+   The organization of the paper is as follows. 
+   In Section II, our simulation framework is briefly introduced.   
+   In Section III, numerical results for homogeneous samples and an N$^+$NN$^+$ structure are presented.  
+   In Section IV, the plasma effects in a MOSFET are tested.
+   Our conclusions are presented in Section V. 
+
+%////////////////
+%// Section II //
+%////////////////
+
+\section{Simulation framework}
+
+\subsection{Stabilization scheme}
+
+   A deterministic Boltzmann equation solver based on the spherical harmonics expansion for the three-dimensional momentum space has been newly implemented into our in-house device simulation framework, G-Device \cite{Hong2015}.
+   Three non-parabolic valleys in the conduction band of silicon are considered.
+   The phonon scattering mechanisms and their parameters are taken from \cite{Hong2011}.
+   The isotropic-elastic approximation for the impurity scattering is adopted with the Brooks-Herring model.
+\revision{Injection boundary conditions \cite{Hong2009,Hong2011} are used for ohmic contacts.}
+   Band gap narrowing and the Pauli principle are not considered.
+   
+\revision{In the spherical harmonics expansion,
+the distribution function is expanded up to a predefined maximum order, $l_{max}$.
+   When $l_{max}$ is too low, considerable errors can be obtained.
+   For example, it has been demonstrated that the first-order expansion is not sufficient for small devices \cite{Rahmat1996,Jungemann2006}.
+   Since an appropriate value of $l_{max}$ depends on the device structure and the bias point, it is important to check the convergence of the simulated quantities carefully \cite{Fischetti2016}. 
+   In this work, the convergence of the simulated quantities (such as terminal currents and voltages) is verified by simulations with various $l_{max}$ values.}
+      
+   The strong electric field inside the device enforces introduction of a special stabilization scheme, such as the $H$-transformation \cite{Gnudi1993} or the maximum entropy dissipation scheme \cite{Ringhofer2002,Jungemann2006}.
+   In particular, by virtue of its construction, the $H$-transformation requires interpolation of the previous solution variables under the present band profile, which inevitably results in interpolation errors.
+   Therefore, the transient simulation capability that is compatible with the $H$-transformation is not currently available.  
+   In this work, following the suggestion in \cite{Rupp2016}, the kinetic-energy-based scheme \cite{Jungemann2006} instead of the $H$-transformation has been adopted.
+\revision{Developing a new stabilization scheme, which allows the transient simulation while taking advantages of the $H$-transformation, would be a formidable task.
+   Progress on this issue will be reported elsewhere.}   
+ 
+%   Throughout the following sections, the maximum order of the spherical %harmonics expansion, $l_{max}$, is 5, which gives quite accurate results %for the steady-state simulation results.
+
+\subsection{Transient capability}
+
+   With adoption of the kinetic-energy-based stabilization scheme, implementing the transient capability is straightforward. 
+
+   When the entire Boltzmann equation is projected, the resultant Boltzmann equation reads \cite{Hong2009,Hong2011}
+\begin{multline}
+\label{eq_balance}
+\sum_{l'}
+\frac{\partial}{\partial t} \left[ Z_{l,l'} f_{l'} \right]
++ \frac{\partial}{\partial \varepsilon} \left[ \mathbf{F} \cdot \mathbf{A}_{l,l'} f_{l'} \right]
++ \nabla_{\mathbf{r}} \cdot \left[ \mathbf{A}_{l,l'} f_{l'} \right] \\
+- B_{l,l'} f_{l'}
+= \hat{S}_{l}^{in} - \hat{S}_{l}^{out},
+\end{multline} 
+where $l$ and $l'$ represent the index pairs for the spherical harmonics expansion, \revision{$t$ is the time,} $Z_{l,l'}$ is the density-of-states, $f_{l}$ is the projected distribution function, $\varepsilon$ is the kinetic energy, $\mathbf{F}$ is the force, $\mathbf{A}_{l,l'}$ and $B_{l,l'}$ are transport parameters \cite{Hong2011}, and $\hat{S}_{l}^{in}$ and $\hat{S}_{l}^{out}$ are scattering integrals.
+   Since the discretization of all other terms except for the time derivation has been investigated extensively in previous works, the discretization of the time derivative term, $\frac{\partial}{\partial t} \left[ Z_{l,l'} f_{l'} \right]$, is the remaining task.
+
+   An implicit time marching scheme is adopted to discretize the time derivative term.
+   In an implicit time marching scheme, the time derivative of $Z_{l,l'} f_{l'}$ at a time instance $t_i$ can be written as 
+\begin{equation}
+\frac{\partial [ Z_{l,l'} f_{l'} ]}{\partial t} \Big|_{t=t_i} \approx Z_{l,l'}(\mathbf{r},\varepsilon) \sum_{j=0}^{N-1} a_{i,j} f_{l'}(\mathbf{r},\varepsilon,t_{i-j}),
+\end{equation}
+where $N$ is the order of the time-marching scheme and $a_{i,j}$ is a coefficient connecting $t_i$ and $t_{i-j}$. 
+   Note that the density-of-states at given $(\mathbf{r},\varepsilon)$ is time-invariant in the kinetic-energy-based scheme. 
+
+   It has been found that the first-order method (the backward Euler method) introduces excessively strong over-damping even with a fairly fine time step. 
+   Therefore, two second-order methods are applied.
+   When the periodic input signal is applied, 
+the modified second-order method based on trigonometric functions \cite{Brachtendorf2013,Jungemann2017}, which is efficient for the periodic case, is used. 
+   In this scheme, with a constant time step of $\Delta t$, the coefficients are given by
+\begin{equation}
+a_{i,0 } = \frac{1}{\Delta t} \frac{z\cos(2z) - z\cos(z)}{\sin(2z)-2\sin(z)},
+\end{equation} 
+\begin{equation}
+a_{i,1} = \frac{1}{\Delta t} \frac{z \sin(z)}{\cos(z) - 1},
+\end{equation}  
+\begin{equation}
+a_{i,2} = \frac{1}{\Delta t} \frac{z}{2\sin(z)},
+\end{equation}    
+where $z = \frac{2\pi}{n_T}$ and $n_T$ is the number of time steps per period.
+   On the other hand, when the input signal is not periodic, 
+following the second-order backward differentiation formula, 
+the coefficients are given by
+\begin{equation}
+a_{i,0 } = \frac{1.5}{\Delta t},~~~ a_{i,1} = -\frac{2}{\Delta t},~~~ a_{i,2} = \frac{0.5}{\Delta t}. 
+\end{equation} 
+    
+%/////////////////
+%// Section III //
+%/////////////////
+
+\section{Numerical Results}
+
+\revision{In this section, electrical properties of homogeneous samples and an N$^+$NN$^+$ structure are simulated by using the transient Boltzmann transport equation solver. 
+   For some cases, the results of the drift-diffusion (DD) model are also shown for comparison.}
+   The standard DD model neglects the time derivative of the current density, $\frac{\partial}{\partial t}\mathbf{J}_n$ \cite{Grasser2003}.
+\revision{The current density is given by
+\begin{equation}
+\mathbf{J}_n = q \mu_n n \mathbf{E} + q D_n \nabla_{\mathbf{r}} n,
+\end{equation}   
+where $q$ is the absolute elementary charge, $\mu_n$ is the electron mobility, $n$ is the electron density, \revision{$\mathbf{E}$ is the electric field,} and $D_n$ is the diffusivity.
+   In this work, the standard DD model is denoted as the ``QSJ'' (quasi-static current density) DD model.
+   It is noted that the QSJ DD model still considers the time derivative of the electron density by solving the continuity equation.    
+   On the other hand, the DD model which does not neglect $\frac{\partial}{\partial t}\mathbf{J}_n$ \cite{Jungemann2017} is called the ``full'' DD model.
+   The equation for the current density reads
+\begin{equation}
+\mathbf{J}_n + \tau \frac{\partial}{\partial t}\mathbf{J}_n = q \mu_n n \mathbf{E} + q D_n \nabla_{\mathbf{r}} n,
+\end{equation}  
+where $\tau$ is the momentum relaxation time. 
+}
+
+\revision{Throughout this work, a uniform energy spacing of 10 meV is adopted.
+   This value is found to be small enough from our numerical experience.}
+   
+\subsection{Homogeneous samples at equilibrium}
+
+\revision{The donor density is 2$\times$10$^{17}$ cm$^{-3}$.
+   In the DD model, the mobility ($\mu_n$) of 518 cm$^2$ V$^{-1}$ sec$^{-1}$ and the momentum relaxation time ($\tau$) of 86 fsec are used. 
+   Since the DC bias voltage is zero, the DC electric field inside the sample vanishes.}
+   A small excitation voltage is applied across the sample.
+   After the initial transient effect is diminished, the current is recorded.
+   By taking the Fourier coefficients of the current, the admittance is calculated.
+   
+\revision{In this example, an analytic solution for the admittance is readily available by solving the DD model. 
+   In conjunction with the equation for the current density, the Poisson equation and the continuity equation should be solved.
+   At equilibrium, the linearized equations at the angular frequency $\omega$ are given by
+\begin{equation}
+\label{eq_poisson}
+-\epsilon \frac{\partial^2 }{\partial x^2} \delta \phi = -q \delta n,
+\end{equation}   
+\begin{equation}
+j\omega q \delta n = \frac{\partial}{\partial x} \delta J_n,
+\end{equation}
+where $\epsilon$ is the permittivity, $x$ is the position, $\delta \phi(x)$ is the AC component of the electrostatic potential, $\delta n(x)$ is the AC component of the electron density, $j$ is the imaginary unit, $\delta J_n(x)$ is the AC component of the current density.
+   In the case of the full DD model, all those equations are combined into
+\begin{equation}
+\label{eq_deltan}
+\frac{\partial^2}{\partial x^2} \delta n = \left[ \frac{q n}{\epsilon V_T} + \frac{j\omega (1+j\omega\tau)}{D_n}  \right] \delta n,
+\end{equation}   
+where $V_T$ is the thermal voltage and the Einstein relation is employed.
+   It is noted that the term $\omega \tau$ should be neglected in the QSJ DD model.
+   By integrating the total current density (which is a sum of $\delta J_n$ and the displacement current density) over the sample, the AC current, $\delta I$, is readily obtained as
+\begin{equation}
+\frac{\delta I}{A} = \frac{1}{1+j \omega \tau} q \mu_n \left[ n \frac{\delta V}{L} - V_T \frac{\delta n(L)-\delta n(0)}{L} \right] + j \omega \epsilon \frac{\delta V}{L},
+\end{equation}
+where $A$ is the device area (1.0 $\mu$m$^2$ in this example) and $\delta V$ is the AC voltage.
+}
+
+\revision{When the ideal ohmic boundary condition is considered,
+\begin{equation}
+\label{eq_idealbc}
+\delta n(0) = 0,~~~ \delta n(L) = 0,
+\end{equation}
+only the trivial solution of (\ref{eq_deltan}) exists.   
+   The admittance is then analytically given as 
+\begin{equation}
+\label{eq_analytic}
+Y(\omega) = \lim_{\delta V \to 0} \frac{\delta I}{\delta V} = \frac{1}{1+j \omega \tau} q \mu_n n \frac{A}{L} + j \omega \epsilon \frac{A}{L}.
+\end{equation}
+   At high frequencies, the capacitive contribution from the second term dominates. 
+   At low frequencies, in the case of the full DD model, the susceptance (the imaginary part of the admittance) may or may not become negative, depending on the sign of $\tau q \mu_n n - \epsilon$.
+   The negative susceptance is originated from the time derivative of the current density.
+   For a relatively long sample, a reasonable agreement between the results from the Boltzmann transport equation and (\ref{eq_analytic}) is achieved as shown in Fig. \ref{fig_homo_y_long}.
+   The sample length is 1200 nm.         
+}
+
+\begin{figure}[!t]
+\centering
+\includegraphics[width=3in]{homo_y_long.jpg}
+\caption{\revision{Admittance of a homogeneous sample at equilibrium.
+The sample length is 1200 nm.
+It is obtained by solving the Boltzmann transport equation (the full BTE model).
+The results of an analytic equation, (\ref{eq_analytic}), are shown for comparison.}}
+\label{fig_homo_y_long}
+\end{figure} 
+  
+\revision{However, for a relatively short sample, the boundary condition has more significant impact on the simulation results. 
+   Fig. \ref{fig_homo_y} shows the admittance of a 120-nm-long sample at equilibrium.
+   The result from the Boltzmann transport equation shows that the simple analytic expression with the ideal boundary condition, (\ref{eq_analytic}), fails to predict the admittance even at low frequencies.
+   In order to see the effect of the boundary condition, the admittance is also calculated with the equilibrium distribution applied to ohmic contacts (empty symbols in the figure).
+   It corresponds to the ideal ohmic boundary condition, (\ref{eq_idealbc}).
+   As shown in Fig. \ref{fig_homo_y}, the admittance with the ideal ohmic boundary condition agrees well with (\ref{eq_analytic}).}
+
+\revision{Using the DD model, the reason of discrepancy can be explained as follows.
+   With the recombination velocity of contacts, $v_{rec}$, more realistic boundary conditions for two contacts are written as 
+\begin{equation}
+\delta J_n(0)= q \delta n(0) v_{rec},
+\end{equation}
+\begin{equation}
+\delta J_n(L)= -q \delta n(L) v_{rec}.
+\end{equation}
+   Then, a non-trivial solution, $\delta n$, of (\ref{eq_deltan}) can be found.
+   Therefore, because of non-vanishing $\delta n(L) - \delta n(0)$, the admittance can be significantly deviated from (\ref{eq_analytic}).
+   In Fig. \ref{fig_homo_y}, the full DD results with two different values of $v_{rec}$ are also shown.
+   With a certain value of the recombination velocity ($9\times10^{6}$ cm sec$^{-1}$ in this example), excellent agreement with the full BTE model is obtained.
+   When the recombination velocity is much lower than the optimal value (for example, $4\times10^{6}$ cm sec$^{-1}$ in the figure), the low-frequency conductance is reduced and the low-frequency susceptance is overestimated.}
+   This reveals that not only the correct transport equation but also the correct boundary condition are critically important to gain the correct admittance.
+   
+\begin{figure}[!t]
+\centering
+\includegraphics[width=3in]{Fig2_Revision.jpg}
+\caption{Admittance of a homogeneous sample at equilibrium.
+\revision{The sample length is 120 nm.}
+It is obtained by solving the Boltzmann transport equation (the full BTE model).
+\revision{Impact of the ideal ohmic boundary condition on the admittance is clearly shown.
+The full drift-diffusion (DD) model results with two different recombination velocities are compared.}}
+\label{fig_homo_y}
+\end{figure}   
+      
+   The time derivative of the current density is usually neglected in the conventional device simulation.
+   In order to examine the impact of the time derivative term, two different simulation sets are generated.
+   In addition to the simulation with correct implementation of the time derivative term (the ``full'' BTE model), an approximated implementation (the ``QSJ'' BTE model) is tried.
+   In the QSJ BTE model, the time derivative term is implemented only for the zeroth-order distribution function, while it is completely ignored for the higher-order distribution functions.
+   The results shown in Fig. \ref{fig_homo_y_qsj} show that the approximation yields significant errors in the admittance.
+   Even in terms of the overall magnitude, a significant error is observed at frequencies of around two or three THz.
+%\revision{Although the susceptance is reduced as the frequency is decreased, %the results from two BTE models do not converge.}
+         
+\begin{figure}[!t]
+\centering
+\includegraphics[width=3in]{homo_y_qsj.jpg}
+\caption{Admittance of a homogeneous sample at equilibrium.
+In the QSJ BTE model, the time derivative of the distribution function is considered only at the zeroth-order.}
+\label{fig_homo_y_qsj}
+\end{figure}    
+
+\subsection{N$^+$NN$^+$ structure}
+
+   An N$^+$NN$^+$ structure whose length is 120 nm is simulated.     
+   The device area is 1.0 $\mu$m$^2$.  
+   The 40-nm-long lowly doped region is surrounded by two highly doped regions.
+\revision{The DC IV curve is shown in Fig. \ref{fig_nnn_dc}(a).}
+   As the maximum order of the spherical harmonics expansion, $l_{max}$, increases, the anode current is converged.
+\revision{In Fig. \ref{fig_nnn_dc}(b), the doping profile and the electron velocity at the anode voltage of 0.5 V are shown as functions of the position.
+   The maximum velocity is much larger than the saturation velocity, due to the strong quasi-ballistic transport.} 
+   Since the anode current is already converged with $l_{max}$ = 5, 
+the transient simulation also has been performed with $l_{max}$ = 5.    
+   
+\begin{figure}[!t]
+\centering
+\includegraphics[width=3.5in]{Fig4_Revision.jpg}
+\caption{\revision{(a) DC IV curve of a 120-nm-long structure.
+$l_{max} =$ 1, 3, and 5. 
+(b) Doping profile and electron velocity as functions of the position. The anode voltage is 0.5 V.}}
+\label{fig_nnn_dc}
+\end{figure}     
+   
+   Small-signal anode currents of the 120-nm-long structure for the first five periods are shown in Fig. \ref{fig_nnn_tr}. 
+   The DC voltage is 0.5 V and various frequencies are tested. 
+\revision{At low frequencies, the conductive components dominate and the phase of the current is very similar to that of the applied voltage.}
+   As the frequency increases (for example at 10 THz), the capacitive contribution becomes significant.
+\revision{Such a capacitive contribution exhibits the phase difference of 90 degrees.}
+      
+\begin{figure}[!t]
+\centering
+\includegraphics[width=3in]{nnn_tr.jpg}
+\caption{Transient simulation results for the anode current. 
+The small-signal response without the DC current is drawn. 
+The amplitude of the input signal is 1 mV.
+The 120-nm-long structure is considered. 
+The DC voltage is 0.5 V and various frequencies are tested. 
+Time is normalized to the period.}
+\label{fig_nnn_tr}
+\end{figure}   
+
+   The small-signal admittance 
+is shown for various excitation frequencies in Fig. \ref{fig_nnn_y}.
+   Below a few hundred GHz, the conductance (the real part of the admittance) does not change significantly. 
+   Reduction of the conductance at 0.5 V originates from the DC IV characteristics shown in Fig. \ref{fig_nnn_dc}.  
+   Beyond 5 THz, the admittance does not depend on the bias voltage.
+%   At high frequencies, inclusion of the time derivative in the odd equations %introduces much difference in the small-signal admittance. 
+%   Moreover, the drift-diffusion simulation gives a result which is very %similar to that without the time derivative in the odd equations. 
+%   Therefore, it is confirmed that the missing time derivative in the current %density equation is important at high frequencies.  
+
+\begin{figure}[!t]
+\centering
+\includegraphics[width=3in]{nnn_y.jpg}
+\caption{Frequency dependence of the small-signal admittance calculated with the full BTE model.  
+%Calculation results with different approximations for the time derivative %term are compared. 
+Two DC bias voltages of 0.0 V and 0.5 V are considered.}
+\label{fig_nnn_y}
+\end{figure}  
+    
+   Thus far, the small-signal response has been calculated by the transient simulation.
+   However, the transient Boltzmann transport equation solver can be applied to general large-signal cases.
+   The large-signal response is shown in Fig. \ref{fig_nnn_ls}.    
+   The amplitude of the sinusoidal excitation is as large as 0.5 V.
+   The frequency is 3 THz.
+   As shown in the figure, the large-signal excitation with the peak-to-peak amplitude of 1 V can be simulated without numerical problems.      
+   This demonstrates the robustness of the deterministic Boltzmann equation solver.  
+   The third order harmonic component (9 THz) of the anode current is about 0.8 $\%$ of the fundamental one (3 THz). 
+   Higher order harmonics are generated by the nonlinearity of the device, which cannot be captured by the small-signal analysis.
+   Also, comparison with the QSJ simulation results reveals the importance of the time derivative term.
+%   For a nonlinear system at a high operation frequency, the deterministic %Boltzmann equation solver developed in this work can be used as a valuable %tool.   
+%   High frequency components in the anode current can be clearly observed.\
+%   It is due to the nonlinear current-voltage characteristics of the N$^+$NN$^+$ %structure. 
+   
+\begin{figure}[!t]
+\centering
+\includegraphics[width=3in]{nnn_ls.jpg}
+\caption{\revision{Large-signal simulation results of the anode current. The frequency of the voltage excitation is 3 THz.}
+The peak-to-peak amplitude of the input signal is 1 V.}
+\label{fig_nnn_ls}
+\end{figure}  
+
+   Next, the step response of the  N$^+$NN$^+$ structure is simulated. 
+\revision{The anode bias voltage is increased from 0 V to 0.5 V with a smooth waveform of $0.25 - 0.25 \cos(\frac{\pi t}{t_{ramp}})$ V, where $t_{ramp}$ is the ramping time.
+   Once after the voltage reaches 0.5 V, it does not change.}
+   Various ramping speeds have been tested.
+   The duration of the ramping phase is used to normalize the time variable.
+   For slow ramping rates, the results are similar with the quasi-static result as shown in Fig. \ref{fig_nnn_step}.
+   However, for faster ramping rates, the anode current is heavily deviated from the quasi-static result. 
+   For cases with large average ramping rates such as 5 V psec$^{-1}$, strong overshoot of the anode current is observed.   
+\revision{In those cases, the displacement current contributes significantly to the total current as shown in Fig. \ref{fig_nnn_step}.}
+   Even after the ramping period is finished, the anode current takes a considerable amount of time to be relaxed. 
+
+\begin{figure}[!t]
+\centering
+\includegraphics[width=3in]{nnn_step.jpg}
+\caption{Step-response of the anode current. 
+\revision{In addition to the total currents (solid lines), the displacement current with the ramping time oaf 0.1 psec (a dashed line) is also shown.}
+The time variable is normalized with the ramping time.
+Various ramping rates are tested.}
+\label{fig_nnn_step}
+\end{figure}  
+
+   The time evolution of the electron distribution function is plotted in Fig. \ref{fig_nnn_step_distribution}.    
+   The ramping rate is 5 V psec$^{-1}$ and the elapsed times are $t$ = 0.1 psec (just after the ramping period) and 0.2 psec (0.1 psec elapsed after the ramping period).
+   At $t$ = 0.1 psec, the electron distribution function (its zeroth-order expansion coefficient) is close to that in the equilibrium, because it takes a finite time to heat the electron gas.
+   On the other hand, at $t$ = 0.2 psec, it is clearly shown that high-energy electrons are generated near the anode terminal. 
+
+\begin{figure}[!t]
+\centering
+\includegraphics[width=3.5in]{nnn_step_distribution.jpg}
+\caption{Electron distribution function for time points, (a) $t$ = 0.1 psec and (b) $t$ = 0.2 psec.
+The ramping rate is 5 V psec$^{-1}$.
+}
+\label{fig_nnn_step_distribution}
+\end{figure} 
+   
+%////////////////
+%// Section IV //
+%////////////////
+
+\section{Application to Plasma Effects in a MOSFET}
+
+\revision{Using the transient simulation capability,
+the detector operation of a scaled MOSFET is simulated.}
+   It is an ideal tool to estimate the plasma modes in the two-dimensional electron gas.
+\revision{Previous studies on plasma effects in the scaled devices via full-band Monte Carlo simulations can be found in \cite{Fischetti2001,Sano2011}.
+}
+
+   A double-gate MOSFET, whose oxide thickness is 1 nm, is considered. 
+   The silicon substrate is 10 nm.
+   Only the upper half of the entire structure has been simulated.
+   The doping profile along the channel direction is identical to that of the N$^+$NN$^+$ structure shown in the previous section.
+   The gate length is 60 nm and the gate workfunction is 4.5 eV.
+    
+   The one-dimensional electron transport is considered, while the two-dimensional Poisson equation is solved together \cite{Hong2015}. 
+\revision{No quantum confinement effect is included in this simulation.
+   Therefore, the finite thickness of the electron gas \cite{Dahl1977,Fischetti2001a} is not considered.
+   In order to evaluate the impact of this effect, the multisubband approach \cite{Jin 2008,Ruic2015} would be required, which is an interesting future research topic.}
+%Although no quantum confinement effect is included in this simulation, it %is expected that the general trend of the results is valid.
+   The surface-roughness scattering mechanism is neglected.
+   Only the bulk phonon and impurity scattering mechanisms are considered.
+   The input characteristics at the steady-state condition are shown in Fig. \ref{fig_mos_dc}. 
+   The threshold voltage is about 0.3 V.
+   It is also confirmed that the simulation with $l_{max}$ = 5 gives reasonably converged values. 
+
+\begin{figure}[!t]
+\centering
+\includegraphics[width=3in]{mos_dc.jpg}
+\caption{Input characteristics of the 60-nm MOSFET at the steady-state condition. The drain voltage is fixed to 0.01 V.
+The surface-roughness scattering is neglected.
+}
+\label{fig_mos_dc}
+\end{figure}  
+
+   The detector operation \cite{Dyakonov1996} is simulated.
+   The linear operation mode (so called ``cold FET'') has been exclusively considered in the simulation.
+\revision{The source terminal is directly connected to the ground and the drain terminal is electrically open.
+   Therefore, no current is allowed at the drain terminal.
+   However, it does not necessarily mean that the drain voltage also vanishes.
+   Actually, when an input signal is applied to the gate terminal, a non-vanishing drain voltage is induced so that the drain current vanishes.
+   The DC component of the induced drain voltage is often used to quantify the detector response \cite{Dyakonov1996}.}
+
+   Once after the steady-state solution is obtained, the input signal, whose voltage amplitude is 1 mV, is applied to the gate terminal.  
+   A figure-of-merit, the voltage responsivity, $R_V$, is defined as
+\begin{equation}
+R_V =  \frac{\left| V_D \right|}{P_{AC}},
+\end{equation}   
+where $V_D$ is the induced DC drain voltage and $P_{AC}$ is the dissipated AC power of the MOSFET.  
+\revision{The amplitude of the AC gate voltage does not change the responsivity because the responsivity is normalized with $P_{AC}$.
+   It has been also numerically verified by the simulation results with different amplitudes.}
+   Since the two-dimensional cross section is simulated, $R_V$ has to be divided by the width of the device in the third dimension \cite{Jungemann2017}.
+  
+   As in the previous section, the transient simulation has been performed.
+   After the initial transient effect is diminished, the DC drain voltage is extracted.
+   Two simulation sets (the full BTE and QSJ BTE models) are tested.
+\revision{Only when the time derivative of the distribution function is considered (the full BTE model),
+the plasma mode is obtained by the simulation.
+   In \cite{Jungemann2017}, it has been shown that even the small-signal admittance obtained by the full model can significantly differ from the one obtained by the QSJ model.
+   The difference of the small-signal response also affects the induced drain voltage.
+   Therefore, the values of $R_V$ obtained from the full and QSJ models may differ. 
+   The difference between two models is interpreted as an indicator for the impact of the plasma mode.}
+
+\revision{The voltage responsivity is shown as a function of the frequency in Fig. \ref{fig_mos_responsivity_vg}.
+   Two gate bias voltages are tested.}
+   The responsivity shows a maximum value near the threshold voltage \revision{(0.3 V)}.
+\revision{At this bias condition, the two models give almost identical results.
+   Therefore, significant impact of the plasma effect cannot be observed.}
+   However, above the threshold voltage \revision{(1.0 V)}, the full BTE results slightly deviate from the QSJ ones.
+\revision{Local peaks are observed at certain frequencies only in the full BTE result.}
+   %The sign of $V_D$ changes from negative to positive at about 1.9 V.
+   Such differences are attributed to the plasma modes in the channel.  
+\revision{It is noted that, depending on the frequency, the full BTE results can be larger or smaller than the QSJ results \cite{Jungemann2017}.}   
+        
+\begin{figure}[!t]
+\centering
+\includegraphics[width=3in]{mos_responsivity_freq.jpg}
+\caption{\revision{Absolute value of the responsivity, $R_V$, as a function of the frequency. Two gate bias voltages (0.3 V and 1.0 V) are tested. 
+The responsivities at 1.0 V are scaled for clarity.
+Local peaks are pointed out by arrows.
+The induced DC drain voltage, $|V_D|$, is also shown in the right $y$-axis.
+The amplitude of the AC gate voltage is 1 mV.}
+}
+\label{fig_mos_responsivity_vg}
+\end{figure} 
+
+%   Frequency dependence of $R_V$ up to 20 THz is shown in Fig. \ref{fig_mos_responsivity_freq}.
+%   Two gate bias voltages of 0.25 V (in the subthreshold region) and 1.0 %V (above the threshold voltage) are selected.
+%   The QSJ BTE results are also shown.
+%   The difference between two models is interpreted as a result of the plasma %effect.  
+   
+%\begin{figure}[!t]
+%\centering
+%\includegraphics[width=3in]{mos_responsivity_freq.jpg}
+%\caption{Absolute value of the responsivity, $R_V$, as a function of the %frequency. 
+%The gate voltages are 0.25 V and 1.0 V.}
+%\label{fig_mos_responsivity_freq}
+%\end{figure}    
+
+   It has been found that the voltage responsivity of the 60-nm MOSFET is only slightly affected by the plasma effect.
+   It is expected that the plasma modes in the electron gas will have a larger impact in aggressively scaled devices.
+   Systematic investigation of the detector performance is of great research interest, and will be reported elsewhere.  
+
+%   One question of interest is whether the drift-diffusion model can predict %this behavior correctly. 
+%   Although the drift-diffusion model cannot be generally valid, at bias %conditions close to the zero drain voltage, a certain agreement is expected.
+%   In this work, the mobility and the momentum relaxation time are taken %from the DC BTE result.
+%   Using the admittance at a low frequency, the surface recombination velocity %is fitted.
+%   It has been found that the surface recombination velocity is more and %less constant (about 6$\times$10$^{6}$ cm sec$^{-1}$) over a wide range %of the gate voltage. 
+%   From Fig. \ref{fig_mos_responsivity_dd}, it is concluded that the drift-diffusion %model (with $\frac{\partial}{\partial t}J_n$) can generate a qualitatively %sound result as much as the mobility is calibrated against the BTE result.
+%   Of course, at nonzero DC bias current, the validity of the drift-diffusion %model is questionable.  
+  
+%   In this work, the linear operation mode (so called ``cold FET'') has %been exclusively considered in the simulation.
+%   Since it is implemented in a general-purpose device simulator, application %to the saturation mode is also possible.
+%   Investigation on the device parameters for the stable plasma oscillation %will be reported elsewhere.
+
+%///////////////
+%// Section V //
+%///////////////
+
+\section{Conclusions}
+
+   In this work, the transient simulation has been performed using a deterministic Boltzmann equation solver. 
+   A kinetic-energy-based scheme is adopted with sufficiently dense grids.
+   Implicit time marching methods are used.
+   
+   It has been demonstrated that the transient simulation using a deterministic Boltzmann equation solver is possible.
+\revision{Examples for homogeneous samples, an N$^+$NN$^+$ structure, and a MOSFET have been shown.}
+   The importance of the boundary condition is also shown.
+   Furthermore, considering the time derivative of the distribution completely (the full BTE model in this work) is mandatory for accurate calculation in high frequencies. 
+   
+% use section* for acknowledgment
+\section*{Acknowledgment}
+
+   The authors would like to thank Prof. Christoph Jungemann (RWTH Aachen, Germany) and Prof. Akira Satou (Tohoku University, Japan) for helpful discussions.
+%\revision{Valuable comments from the reviewers are gratefully appreciated.}
+
+% Can use something like this to put references on a page
+% by themselves when using endfloat and the captionsoff option.
+\ifCLASSOPTIONcaptionsoff
+  \newpage
+\fi
+
+
+
+% trigger a \newpage just before the given reference
+% number - used to balance the columns on the last page
+% adjust value as needed - may need to be readjusted if
+% the document is modified later
+%\IEEEtriggeratref{8}
+% The "triggered" command can be changed if desired:
+%\IEEEtriggercmd{\enlargethispage{-5in}}
+
+% references section
+
+% can use a bibliography generated by BibTeX as a .bbl file
+% BibTeX documentation can be easily obtained at:
+% http://mirror.ctan.org/biblio/bibtex/contrib/doc/
+% The IEEEtran BibTeX style support page is at:
+% http://www.michaelshell.org/tex/ieeetran/bibtex/
+%\bibliographystyle{IEEEtran}
+% argument is your BibTeX string definitions and bibliography database(s)
+%\bibliography{IEEEabrv,../bib/paper}
+%
+% <OR> manually copy in the resultant .bbl file
+% set second argument of \begin to the number of references
+% (used to reserve space for the reference number labels box)
+% 
+\bibliographystyle{IEEEtran}
+\bibliography{SDSL_bib}
+
+% biography section
+% 
+% If you have an EPS/PDF photo (graphicx package needed) extra braces are
+% needed around the contents of the optional argument to biography to prevent
+% the LaTeX parser from getting confused when it sees the complicated
+% \includegraphics command within an optional argument. (You could create
+% your own custom macro containing the \includegraphics command to make things
+% simpler here.)
+%\begin{IEEEbiography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{mshell}}]{Michael Shell}
+% or if you just want to reserve a space for a photo:
+
+%\begin{IEEEbiography}{Michael Shell}
+%Biography text here.
+%\end{IEEEbiography}
+
+% if you will not have a photo at all:
+%\begin{IEEEbiographynophoto}{John Doe}
+%Biography text here.
+%\end{IEEEbiographynophoto}
+
+% insert where needed to balance the two columns on the last page with
+% biographies
+%\newpage
+
+%\begin{IEEEbiographynophoto}{Jane Doe}
+%Biography text here.
+%\end{IEEEbiographynophoto}
+
+% You can push biographies down or up by placing
+% a \vfill before or after them. The appropriate
+% use of \vfill depends on what kind of text is
+% on the last page and whether or not the columns
+% are being equalized.
+
+%\vfill
+
+% Can be used to pull up biographies so that the bottom of the last one
+% is flush with the other column.
+%\enlargethispage{-5in}
+
+
+
+% that's all folks
+\end{document}
+
+
