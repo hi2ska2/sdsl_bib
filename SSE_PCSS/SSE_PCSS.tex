@@ -1,0 +1,457 @@
+%% 
+%% Copyright 2007-2019 Elsevier Ltd
+%% 
+%% This file is part of the 'Elsarticle Bundle'.
+%% ---------------------------------------------
+%% 
+%% It may be distributed under the conditions of the LaTeX Project Public
+%% License, either version 1.2 of this license or (at your option) any
+%% later version.  The latest version of this license is in
+%%    http://www.latex-project.org/lppl.txt
+%% and version 1.2 or later is part of all distributions of LaTeX
+%% version 1999/12/01 or later.
+%% 
+%% The list of all files belonging to the 'Elsarticle Bundle' is
+%% given in the file `manifest.txt'.
+%% 
+
+%% Template article for Elsevier's document class `elsarticle'
+%% with numbered style bibliographic references
+%% SP 2008/03/01
+%%
+%% 
+%%
+%% $Id: elsarticle-template-num.tex 168 2019-02-25 07:15:41Z apu.v $
+%%
+%%
+\documentclass[final,5p,times,twocolumn]{elsarticle}
+
+%% Use the option review to obtain double line spacing
+%% \documentclass[authoryear,preprint,review,12pt]{elsarticle}
+
+%% Use the options 1p,twocolumn; 3p; 3p,twocolumn; 5p; or 5p,twocolumn
+%% for a journal layout:
+%% \documentclass[final,1p,times]{elsarticle}
+%% \documentclass[final,1p,times,twocolumn]{elsarticle}
+%% \documentclass[final,3p,times]{elsarticle}
+%% \documentclass[final,3p,times,twocolumn]{elsarticle}
+%% \documentclass[final,5p,times]{elsarticle}
+%% \documentclass[final,5p,times,twocolumn]{elsarticle}
+
+%% For including figures, graphicx.sty has been loaded in
+%% elsarticle.cls. If you prefer to use the old commands
+%% please give \usepackage{epsfig}
+
+%% The amssymb package provides various useful mathematical symbols
+\usepackage{amssymb}
+%% The amsthm package provides extended theorem environments
+%% \usepackage{amsthm}
+
+%% The lineno packages adds line numbers. Start line numbering with
+%% \begin{linenumbers}, end it with \end{linenumbers}. Or switch it on
+%% for the whole article with \linenumbers.
+%% \usepackage{lineno}
+
+\journal{Solid-State Electronics}
+
+%\newcommand{\revision}[1]{\textbf{\underline{#1}}}
+%\newcommand{\revision}[1]{\underline{\textbf{#1}}}
+%\newcommand{\revision}[1]{\textbf{#1}}
+\newcommand{\revision}[1]{{#1}}
+
+\begin{document}
+
+\begin{frontmatter}
+
+%% Title, authors and addresses
+
+%% use the tnoteref command within \title for footnotes;
+%% use the tnotetext command for theassociated footnote;
+%% use the fnref command within \author or \address for footnotes;
+%% use the fntext command for theassociated footnote;
+%% use the corref command within \author for corresponding author footnotes;
+%% use the cortext command for theassociated footnote;
+%% use the ead command for the email address,
+%% and the form \ead[url] for the home page:
+%% \title{Title\tnoteref{label1}}
+%% \tnotetext[label1]{}
+%% \author{Name\corref{cor1}\fnref{label2}}
+%% \ead{smhong@gist.ac.kr}
+%% \ead[url]{home page}
+%% \fntext[label2]{}
+%% \cortext[cor1]{}
+%% \address{Address\fnref{label3}}
+%% \fntext[label3]{}
+
+\title{Photoresponses of the back-side illuminated GaAs photoconductive semiconductor switches \revision{in the linear mode}\tnoteref{1}}
+\tnotetext[1]{
+This research was supported by Korea's state-funded Agency for Defense Development.
+}
+
+%% use optional labels to link authors explicitly to addresses:
+\author[label1]{Yong Pyo Kim}
+\author[label1]{Pyeung Hwi Choi}
+\author[label2]{Min-Seong Kim}
+\author[label2]{Jiheon Ryu}
+\author[label2]{Sung-hyun Baek}
+\author[label1]{Sung-Min~Hong\corref{cor1}}
+\ead{smhong@gist.ac.kr}
+\author[label1]{Sungbae Lee}
+\author[label1]{Jae-Hyung Jang}
+
+\cortext[cor1]{Corresponding author}
+\address[label1]{Gwangju Institute of Science and Technology (GIST), Gwangju 61005, Korea}
+\address[label2]{The 4th R\&D Institute, Agency for Defense Development, Korea}
+
+
+%\author{Yong Pyo Kim, Pyeung Hwi Choi, Min-Seong Kim, Jiheon Ryu, Sung-hyun %Baek, Sung-Min~Hong, Sungbae Lee, and Jae-Hyung Jang}
+
+%\address{}
+
+\begin{abstract}
+%% Text of abstract
+   Photoresponses of the back-side illuminated photoconductive semiconductor switches (PCSSs) \revision{in the linear mode} are studied.  
+   It has been found that the back-side-illuminated PCSS enjoys the better performance than that of the front-side-illuminated one.
+   Photogeneration of electron-hole pairs beneath the contacts under the back-side illumination condition significantly reduces the resistance of the PCSS leading to the higher output pulse amplitude up to 4.6 times.
+   Impact of the beam center position on the output waveform is also investigated for both the illumination cases.
+   The laser beam centered near the cathode yields the slowly-decaying output pulse waveform.
+   On the other hand, the rapidly-decaying waveform is observed with the beam centered near the anode.
+\end{abstract}
+
+%%Graphical abstract
+%\begin{graphicalabstract}
+%\includegraphics{grabs}
+%\end{graphicalabstract}
+
+%%Research highlights
+%\begin{highlights}
+%\item Research highlight
+
+%\item 1. Photoresponses of the back-side illuminated photoconductive semiconductor %switches are studied.
+
+%\item 2. The back-side-illuminated PCSS enjoys the better performance than %that of the front-side-illuminated one.
+
+%\item 3. The laser beam centered near the cathode yields the slowly-decaying %output pulse waveform.
+%\end{highlights}
+
+\begin{keyword}
+Photoconductive semiconductor switch (PCSS) \sep
+gallium arsenide (GaAs) \sep 
+front-side illumination \sep 
+back-side illumination
+%% keywords here, in the form: keyword \sep keyword
+
+%% PACS codes here, in the form: \PACS code \sep code
+
+%% MSC codes here, in the form: \MSC code \sep code
+%% or \MSC[2008] code \sep code (2000 is the default)
+
+\end{keyword}
+
+\end{frontmatter}
+
+%% \linenumbers
+
+%% main text
+\section{Introduction}
+
+   Photoconductive semiconductor switches (PCSSs) \cite{Loubriel1987,Nunnally1990,Pocha1990,Zutavern1991,Loubriel1997}
+have advantages of low jitter characteristics, reliable operation, and the better longevity compared with spark gap switches.
+   They have gained considerable interests in various pulsed power applications and their operational characteristics such as nonlinear mode operation \cite{Ruan2009}, high current conduction \cite{Shi2013}, and temperature dependent output characteristics \cite{Xu2016} have been reported.
+  
+%   In the dark state, the anode is fully charged up to the bias voltage %and the cathode is electrically isolated from the anode by the semi-insulating %(SI) semiconductor substrate.
+%   A laser pulse illuminated on the PCSS generates electron/hole pairs and %the electric current can be conducted between two electrodes for a short %time interval. 
+   
+   Since the PCSSs require optical trigger, it is expected that the illumination conditions may affect their operational characteristics significantly. 
+   In the lateral-type PCSS, where the cathode and anode electrodes are placed on the same side of the device, two different illumination schemes have been utilized.
+   In the front-side illumination scheme, the laser beam is illuminated directly on the side where the electrodes are fabricated.
+   %It is called the front-side illumination in this work.
+   In the other back-side illumination scheme, the laser beam is illuminated on the opposite side as shown in Fig. 1(a).
+   Although the front-side illumination and the back-side illumination methods have been reported for GaAs PCSS devices \cite{Hettler2012}, there have been few reports on the direct comparison of the two illumination methods.
+
+   There have been a couple of experimental reports on the device performances dependent on the laser illumination position \cite{Wang2013,Shi2014}.
+   The position dependence of the output current is studied with a long triggering pulse (135 nsec) in \cite{Wang2013}.
+   It has been reported that the peak output voltage decreases monotonically when the beam moves from the cathode to the anode. 
+   The threshold of nonlinear mode operation is extracted as a function of the illumination position in \cite{Shi2014}.
+   The beam near the cathode contact triggers the nonlinear mode operation more effectively than the beam near the anode. 
+   However, a systematic investigation on the impact of the laser illumination position on the output pulse waveform is still lacking.
+%has not been reported yet.
+   For the given PCSS devices, a study on the optimum illumination conditions can provide a way to maximize the performance of the devices.
+%   By studying effects of the illumination conditions, valuable insight %to improve the performance can be obtained without changing the substrate %material or the structure.   
+
+   In this work, the impact of illumination conditions on the output waveform of the lateral GaAs PCSS is investigated by comparing the front-side and back-side illumination schemes \revision{in the linear mode}.
+   Furthermore, the impact of the beam center position on the performance of the PCSS devices is also investigated for both the front-side and back-side illuminated devices.
+
+\section{Device fabrication and experimental setup}
+
+   The GaAs PCSSs employed in this study were fabricated on a 600-$\mu$m-thick semi-insulating (SI) GaAs substrate with a resistivity higher than 10$^7$ $\Omega$ cm and an electron mobility higher than 5000 cm$^2$ V$^{-1}$s$^{-1}$. 
+\revision{The PCSS shown in Fig. \ref{fig_str}(a) has two 5$\times$3 mm$^2$ electrodes separated with a gap of 2 mm.
+The radius of curvature at the corners of the electrodes is 0.5 mm.
+Top and side views of the device-under-test are shown in Figs. \ref{fig_str}(b) and \ref{fig_str}(c), respectively, with some important geometric dimensions.
+}
+   The Ge/Au/Ni/Au (37/100/15/200 nm) multilayer ohmic metal is deposited by electron beam evaporation technique, and is subsequently alloyed at 310 $^o$C for 1 minute to facilitate the ohmic contact formation. 
+   For the back-side illumination, the PCSS device is mounted on a printed circuit board (PCB) having a 4-mm-wide aperture.
+   The center of the PCSS device is carefully aligned to the center of the aperture on the PCB.
+   For the optical trigger for the GaAs PCSS, Wedge-HF 1064 nm pulse laser with the FWHM (full width at half maximum) of 0.7 ns is used for the optical trigger. 
+   The spatial beam profile is modeled as a two-dimensional Gaussian function with a standard deviation of 1.2 mm.
+   The incident energy of the optical pulse is 135 $\mu$J which is monitored by an energy meter (Coherent EnergyMax J-10MB-LE).
+   The pulse repetition rate is kept as low as 10 Hz to ensure the anode to be fully charged up to the bias voltage for each optical trigger.
+
+   The experimental setup to measure the output characteristics of the GaAs PCSS is also shown \revision{in Fig. \ref{fig_str}(d).} 
+   A 1 nF capacitor is charged by the high-voltage dc source through a 1 M$\Omega$ resistor. 
+%   When the PCSS is switched on by the optical triggering pulse, the charges %stored in 1 nF discharges through the 40 dB attenuator and measured by the %digital phosphor oscilloscope with a bandwidth of 2.5 GHz.
+   When the PCSS is switched on by the optical triggering pulse, the charges stored in the capacitor discharges through the PCSS and a 40 dB attenuator. 
+   The attenuated signal is measured by the digital phosphor oscilloscope (Tektronix DPO7254) with a bandwidth of 2.5 GHz.
+   The testing circuit is designed to switch from one illumination scheme to the other by flipping the PCSS without changing the experimental setup, which makes it possible to directly compare the output waveforms under the two illumination conditions.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%   
+\begin{figure}[!t]
+\centering
+%\includegraphics[width=3.5in]{Fig1_NEW_TED_Brief.jpg}
+\includegraphics[width=3.5in]{Fig1_SSE_Revised.jpg}
+\caption{
+\revision{
+%The PCSS cathode which is fed to an oscilloscope having 50 $\Omega$ input %impedance (load resistor) is taken as the output node.
+(a) Fabricated lateral-type GaAs PCSS with a 2-mm-gap.
+(b) Top view and
+(c) side view of the device-under-test with some important geometric dimensions in millimeters.
+(d) Experimental setup to measure the output performance of the PCSS in the front-side and back-side illumination conditions.
+The PCSS cathode which is fed to an oscilloscope through a 40 dB attenuator is taken as the output node. The load impedance seen from the cathode is 50 $\Omega$.
+}
+}
+\label{fig_str}
+\end{figure}    
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%   Both of the front-side and back-side illumination conditions are experimentally %tested.  
+
+\section{Front-side and back-side illumination}
+
+   Several samples are fabricated and tested.
+   The typical output waveforms under the two different illumination schemes are recorded as shown in Fig. 2.
+   The experiment is performed at room temperature.
+   The center of the laser beam is located at the middle of the gap and the bias voltage is 1 kV.
+   It is clearly shown that the back-side illuminated PCSS (bPCSS) exhibits the 4.6 times higher peak voltage (690 V) than the front-side illuminated PCSS (fPCSS) (150V).
+   It is also noted that the output voltage occasionally exhibits a sudden increase in the case of the fPCSS, as shown in Fig. 2(a).
+% DELETED IN REVISION
+%   It is attributed to the surface flashover initiated by a high electric %field in the PCSS \cite{Yuan2009}.
+   Such a behavior is not observed in the bPCSS up to 1.2 kV.   
+%   It can be concluded that the bPCSS exhibits the better performance than %the fPCSS.   
+   Since the wider gap (4 mm) is open for the back-side illumination than the front-side case (2 mm), one may guess that the performance improvement is originated from the increased number of photons incident to the GaAs substrate.
+    However, the number of incident photons for the bPCSS is only 1.5 times compared with that for the fPCSS due to the relatively narrow beam shape.
+   Therefore, the huge difference in the peak voltage cannot be fully explained by the number of incident photons. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[!t]
+\centering
+\includegraphics[width=3.5in]{Fig2_NEW.jpg}
+\caption{
+Typical output waveforms for the (a) front-side and (b) back-side illumination conditions. 
+%The center of the laser beam is located at the middle of the gap. 
+The 100 output waveforms at the bias voltage of 1 kV are overlapped.
+}
+\label{fig_wave}
+\end{figure}   
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+   In order to analyze the reason of the difference, the three-dimensional device simulation is performed with in-house device simulator, G-Device \cite{Hong2015,Hong2018}.
+   The structure-under-simulation has a dimension of 4$\times$5$\times$0.6 mm$^3$.
+   The spatial non-uniformity of the incident laser beam is modeled by considering the two-dimensional Gaussian function.
+   The measured temporal profile of the beam is taken into account.
+   The high-field saturation of the carrier mobilities is modeled.
+   In this preliminary study, the impact ionization is not included and the simulation is performed only for relatively low bias voltages.   
+\revision{
+   Of course, inclusion of the impact ionization is mandatory when the nonlinear mode is simulated. 
+}   
+%by using the Caughey-Thomas formula. \cite{Caughey1967}
+   In the simulation, the complex refractive index of the GaAs substrate \cite{Levinshtein1996} is adjusted to match the experimental data.
+   The calibrated values are $n = 3.4795$ and $k = 1.694 \times 10^{-6}$.
+   In the case of the front-side illumination, the incident laser beam on the metal contacts is assumed to be completely masked.
+
+   %No optical intensity is observed under the electrodes.
+   %In the case of the back-side illumination, the optical intensity does %not vanish everywhere.
+   %Ideal ohmic contacts are used to model the metal-GaAs interface. 
+
+   The simulated and measured output waveforms of the PCSS at the bias voltage of 100 V are shown in Fig. 3(a).
+   %Both of the experimental and simulation results are shown and fairly %good agreement is observed for the back-side illumination scheme.
+   %Both of the experimental and simulation results are presented.
+   For the bPCSS, the two output waveforms exhibit excellent agreement.
+   On the other hand, the simulated pulse amplitude is considerably smaller than the measured one for the fPCSS.
+   The assumption of the complete masking in the fPCSS would be a possible reason for the underestimated output voltages in the simulation.
+   It has been numerically confirmed that the better agreement can be obtained by allowing incomplete masking due to the light diffraction at the edge of the electrodes.
+   It implies that the photon absorption underneath the contact electrode is crucial to reduce the resistance of the PCSS under illumination.
+   It is another proof that the bPCSS outperforms the fPCSS because the bPCSS allows more photon absorption underneath the metal electrodes.
+%due to the diffraction of incident laser beneath the electrodes.
+%, however, it is not pursued in this work.
+%   The peak output voltage and the time constant, which is determined from %the discharging waveform, are shown in Fig. \ref{fig_peak}.
+   In Fig. 3(b), the peak output voltage is shown as a function of the bias  voltage up to 1.0 kV.
+   The resistance at the peak of output pulse for the bPCSS is found to be around 21 $\Omega$.
+   It is much smaller than that for the fPCSS.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%   
+\begin{figure}[!t]
+\centering
+\includegraphics[width=3.5in]{Fig3_NEW_TED_Brief.jpg}
+\caption{
+(a) Simulated and measured output waveforms of the PCSS for the front-side (FS) or back-side (BS) illumination conditions at the bias voltage of 100 V and the pulse energy of 135 $\mu$J.
+(b) Peak output voltage as a function of the bias voltage.
+Simulated potential profiles in (c) the fPCSS and (d) the bPCSS when the peak output voltage occurs at the bias voltage of 100 V.
+The difference between adjacent contour lines is 2 V. 
+%(e) Color legend for the electrostatic potential, which is used throughout %this work.
+%\textbf{(Inconsistency between Figs. 3(a) and (b) for the fPCSS must be removed.)}
+%(c) Simulated potential profiles for the back-side illumination when the %peak output voltage occurs.
+%Color maps for (b) and (c) are normalized to 100 V.
+%The top sub-figure represents the front-side illumination, while the bottom %one is for the back-side case. 
+%Each sub-figure is normalized with its own ranges.
+}
+\label{fig_simulation}
+\end{figure}   
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% DELETED IN REVISION   
+%   Under the bias voltage higher than 800 V, it becomes difficult to define %the peak output voltage for the fPCSS, because of the flashover as shown %in Fig. 2(a).
+
+   Snap shots of the electrostatic potentials in a two-dimensional 
+plane, which is obtained by cutting the three-dimensional structure at the middle point along the width direction, are compared in Figs. 3(c) and (d). 
+   In the case of the fPCSS (Fig. 3(c)), the potential varies rapidly near the cathode, which implies that high electric field is formed in this region.   
+   Since no optical energy is incident beneath the two electrodes due to the masking effect, there is almost no electron-hole pair generated in these regions.
+   It significantly increases the resistance and the electric field is highly concentrated in these region.     
+   When the laser is incident from the back-side (Fig. 3(d)), the potential is more evenly distributed and the electric field strength at the edge of the electrodes gets reduced.
+   Therefore, the higher output voltage for the bPCSS can be attributed to the lower resistances in the areas beneath two electrodes.
+   The reduced electric field in the back-side illumination also effectively suppresses the surface flashover.   
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%   
+%\begin{figure}[!t]
+%\centering
+%\includegraphics[width=3.5in]{Fig4.jpg}
+%\caption{
+%(a) 
+%Peak output voltage as a function of the bias voltage up to 1.2 kV.
+%Both of the experimental and simulation results are shown.
+%(b) Simulation results with an intentionally increased hole mobility. For %the front-side illumination, a huge increase of the peak output voltage %is observed.
+%%The inset shows the potential profile when the incident laser intensity %%becomes maximum.
+%}
+%\label{fig_peak}
+%\end{figure}   
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+
+
+
+%   Based on the calibrated simulation set-up, the impact of the carrier %mobilities is investigated in Fig. 4(b).
+%   The hole mobility model is intentionally matched to the electron mobility %model.
+   %The low-field mobilities of electrons and holes are intentionally averaged.
+%   For the front-side illumination, the peak output voltage largely increases %by a factor of 2.8, although no significant change is observed for the back-side %case.
+%   The electrostatic potential shown in the inset of Fig. 4(b) confirms %that the electric field is equally distributed to the two contacts, which %is in contrast to Fig. 3(b).
+%   When the hole mobility is much lower than the electron mobility, the %area near the cathode becomes more resistive than the area near the anode.
+%   Therefore, the electric field is asymmetrically concentrated only on %the cathode. 
+
+
+      
+%   For low bias voltages, the peak output voltage is linearly increased %as the bias voltage increases. 
+%   For high bias voltages, the peak output voltage is saturated. 
+%   Experimental results are well reproduced by the device simulation.
+%   Both of the front-side and back-side illuminated PCSSs show similar behavior, %although the slopes are quite different.
+%\textbf{
+%   In Fig. 4(b), the peak output voltage, which is calculated without the %velocity saturation effect, is shown.
+%   The peak output voltage increases without any saturation.   
+%   It confirms that the carrier velocity saturation is the main reason of %the output voltage saturation.
+%}   
+
+ 
+   The photoresponse of the PCSS is also heavily dependent on the center position of the incident laser beam.  
+   The beam center position has been scanned from the cathode to the anode and the peak output voltages are recorded as shown in Fig. 4(a).   
+   %The anode end is located at 1 mm, while the cathode one at 3 mm.
+   As previously shown in Fig. 3, the bPCSS exhibits much higher peak voltage than the fPCSS.
+   When the beam center moves away from the center of the two electrodes ($x$ = 0 mm), the peak output voltage decreases.
+%   Asymmetry in the peak output voltage is due to the difference of carrier %mobilities.    
+   The beam center position heavily affects the electron and hole distribution which in turn determines the discharging behavior. 
+   %The FWHM of the output pulse waveform is extracted and shown in Fig. 4(b).
+   The FWHM of the output pulse for the bPCSS changes more sensitively to the beam position compared with that of the fPCSS as shown in Fig. 4(b).
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%     
+\begin{figure}[!t]
+\centering
+\includegraphics[width=3.5in]{Fig4_NEW.jpg}
+\caption{
+(a)
+Peak output voltage and 
+(b)
+FWHM of the output pulse waveform as a function of the beam center position at the bias voltage of 100 V. 
+%\textbf{(Its data will be updated. Currently, it is not the FWHM.)}
+}
+\label{fig_position}
+\end{figure}     
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+   The above results shown in Fig. 4 suggest the asymmetry in the device operation with respect to the beam center position.
+   It has been numerically confirmed that the asymmetry is not observed when the hole mobility model is intentionally matched to the electron mobility model.   
+   The electrostatic potential profiles with the beam center position at the edges of the anode and the cathode are shown in Figs. 5(a) and (b), respectively.
+   It is clear that the higher electric field is formed near the cathode contact when the beam center is located at $x$ = -1 mm (Fig. 5(a)).
+   In this case, after a certain amount of time elapses, the stronger electric field is formed near the cathode contact (Fig. 5(c)).
+   Such behavior is not observed when the higher electric field is formed near the anode contact (Figs. 5(b) and (d)).  
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%     
+\begin{figure}[!t]
+\centering
+\includegraphics[width=3.5in]{Fig5_NEW.jpg}
+\caption{
+(a) and (b) Simulated potential profiles with the beam center at $x$ = -1 mm (at the anode edge) and 1 mm (at the cathode edge) for the bPCSS when the peak output voltage occurs, respectively. The back-side illumination cases are considered.
+Each arrow represents the position of the peak laser intensity.
+(c) and (d) Simulated potential profiles at the time instance of 10 ns.
+The densely populated contour lines in (c) represent the high electric field at that region.
+}
+%\label{fig_position}
+\end{figure}     
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%   Regardless the center position, there are highly resistive regions in %the front-side illumination case.      
+
+      
+\section{Conclusion}
+
+   In this work, the impact of the illumination condition on the performance of the GaAs PCSS is investigated.
+   It has been demonstrated that the back-side illumination scheme has significant advantages over the front-side illumination, in terms of the peak output voltage and the immunity against the surface flashover. 
+   The main cause of the better performance is attributed to the relatively even distribution of the electric field along the device.   
+%   When there is a highly resistive region, the peak output voltage is decreased %because the electric field is concentrated on that region.
+%   Moreover, it yields a rapid drop of the output waveform to have a shorter %half-life time.
+   It has also been observed that the back-side illumination whose center position is slightly shifted toward the cathode contact provides the higher and the longer output pulse. 
+
+\revision{
+   It is noted that the present study is performed in the linear mode, where the electric field is lower than the critical electric field of GaAs.
+   With a higher bias voltage, it is expected that the PCSS is operated the nonlinear mode, where the impact ionization plays a critical role. 
+   Extended investigation on the nonlinear mode operation can be an interesting future research topic.
+}
+
+%% The Appendices part is started with the command \appendix;
+%% appendix sections are then done as normal sections
+%% \appendix
+
+%% \section{}
+%% \label{}
+
+%% If you have bibdatabase file and want bibtex to generate the
+%% bibitems, please use
+%%
+%%  \bibliographystyle{elsarticle-num} 
+%%  \bibliography{<your bibdatabase>}
+
+\bibliographystyle{elsarticle-num}
+\bibliography{../../../../SDSL_bib/SDSL_bib}
+
+%% else use the following coding to input the bibitems directly in the
+%% TeX file.
+
+%\begin{thebibliography}{00}
+
+%% \bibitem{label}
+%% Text of bibliographic item
+
+%\bibitem{}
+
+%\end{thebibliography}
+\end{document}
+\endinput
+%%
+%% End of file `elsarticle-template-num.tex'.
